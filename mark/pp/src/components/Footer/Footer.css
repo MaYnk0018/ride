@@ -1,0 +1,31 @@
+/* Footer styles */
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.text-muted a {
+  color: #6c757d; /* Dark gray color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-muted a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.text-muted {
+  color: #666;
+  font-size: 14px;
+}

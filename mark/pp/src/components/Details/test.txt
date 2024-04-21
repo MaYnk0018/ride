@@ -1,0 +1,153 @@
+pdf
+
+
+import React, { useState } from 'react';
+import './Details.css'; // Import CSS file for styling
+
+const Details = () => {
+  // State variable to hold form data
+  const [formData, setFormData] = useState({
+    companyDomain: '',
+    companyName: '',
+    companyLogo: null,
+    identificationDocument: null,
+    shareCapital: '',
+    businessAddress: ''
+  });
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    // You can send the form data to your server, for example
+  };
+
+  // Function to handle input changes
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files ? files[0] : value // Check if it's a file input or regular input
+    });
+  };
+
+  return (
+    <div className="form-container">
+      <h2>Company Information</h2>
+      <form onSubmit={handleSubmit}>
+        {/* Company Domain Dropdown */}
+        {/* Your existing code for dropdown */}
+        
+        {/* Company Name Input */}
+        {/* Your existing code for company name input */}
+        
+        {/* Company Logo Input */}
+        {/* Your existing code for company logo input */}
+        
+        {/* Identification Document Input */}
+        <div className="form-group">
+          <label htmlFor="identificationDocument">Identification Document:</label>
+          <input type="file" id="identificationDocument" name="identificationDocument" accept=".pdf" onChange={handleChange} />
+          {/* Render preview of selected PDF */}
+          {formData.identificationDocument && (
+            <iframe
+              src={URL.createObjectURL(formData.identificationDocument)}
+              title="PDF Document"
+              className="pdf-preview"
+            />
+          )}
+        </div>
+        
+        {/* Share Capital Input */}
+        {/* Your existing code for share capital input */}
+        
+        {/* Business Address Input */}
+        {/* Your existing code for business address input */}
+        
+        {/* Submit Button */}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Details;
+
+
+
+image
+
+import React, { useState } from 'react';
+import './Details.css'; // Import CSS file for styling
+
+const Details = () => {
+  // State variable to hold form data
+  const [formData, setFormData] = useState({
+    companyDomain: '',
+    companyName: '',
+    companyLogo: null,
+    identificationDocument: null,
+    shareCapital: '',
+    businessAddress: ''
+  });
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    // You can send the form data to your server, for example
+  };
+
+  // Function to handle input changes
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files ? files[0] : value // Check if it's a file input or regular input
+    });
+  };
+
+  return (
+    <div className="form-container">
+      <h2>Company Information</h2>
+      <form onSubmit={handleSubmit}>
+        {/* Company Domain Dropdown */}
+        {/* Your existing code for dropdown */}
+        
+        {/* Company Name Input */}
+        {/* Your existing code for company name input */}
+        
+        {/* Company Logo Input */}
+        <div className="form-group">
+          <label htmlFor="companyLogo">Company Logo:</label>
+          <input type="file" id="companyLogo" name="companyLogo" accept="image/*" onChange={handleChange} />
+          {/* Render preview of selected logo */}
+          {formData.companyLogo && (
+            <img src={URL.createObjectURL(formData.companyLogo)} alt="Company Logo" className="logo-preview" />
+          )}
+        </div>
+        
+        {/* Identification Document Input */}
+        <div className="form-group">
+          <label htmlFor="identificationDocument">Identification Document:</label>
+          <input type="file" id="identificationDocument" name="identificationDocument" accept=".pdf" onChange={handleChange} />
+          {/* Render file name of selected document */}
+          {formData.identificationDocument && (
+            <p className="document-name">{formData.identificationDocument.name}</p>
+          )}
+        </div>
+        
+        {/* Share Capital Input */}
+        {/* Your existing code for share capital input */}
+        
+        {/* Business Address Input */}
+        {/* Your existing code for business address input */}
+        
+        {/* Submit Button */}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Details;
