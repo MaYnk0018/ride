@@ -1,0 +1,47 @@
+.product-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  width: 70%; /* Adjust width as needed */
+  margin: 20px auto; /* Center horizontally */
+  padding: 20px; /* Add padding */
+}
+
+.product-title {
+  margin-bottom: 20px; /* Add margin below the product title */
+}
+
+.product-details {
+  background-color: #ffffff; /* Add background color */
+  padding: 20px; /* Add padding */
+  border: 1px solid #ccc; /* Add border */
+  width: 100%; /* Ensure full width */
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 20px; /* Add gap between grid items */
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 10px; /* Add margin between label and value */
+}
+
+.info-value {
+  flex-grow: 1; /* Allow value to take up remaining space */
+}
+
+.organization-info {
+  margin-top: 20px; /* Add margin to separate organization info */
+}
+
+.connect-btn {
+  margin-top: 20px; /* Add margin to the top of the button */
+}

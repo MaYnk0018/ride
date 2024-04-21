@@ -1,0 +1,21 @@
+/* HomePage.css */
+
+.card-container {
+    display: flex; /* Use flexbox for linear alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .left-content {
+    flex: 1; /* Take up available space */
+  }
+  
+  .right-content {
+    flex: 1; /* Take up available space */
+  }
+  
+  .right-content img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
