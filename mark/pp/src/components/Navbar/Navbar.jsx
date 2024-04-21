@@ -16,7 +16,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Your Logo
+          EUREK
         </Link>
         <button
           className="navbar-toggler"
