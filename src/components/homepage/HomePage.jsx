@@ -35,10 +35,7 @@ function HomePage() {
                 <StudentCard />
               )}
             </div>
-            <div className="right-content">
-              {/* Your image goes here */}
-              <img src={hero} alt="Your Image" />
-            </div>
+            
           </div>
         )}
       </div>

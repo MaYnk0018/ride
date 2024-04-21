@@ -1,30 +1,31 @@
+// Login.js
+
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import myContext from "../../context/myContext";
 import toast from "react-hot-toast";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
-import { collection, onSnapshot, query, where,doc } from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
-     // navigate 
-     const navigate = useNavigate();
+    // navigate 
+    const navigate = useNavigate();
 
-     // User Signup State 
-     const [userLogin, setUserLogin] = useState({
-         email: "",
-         password: ""
-     });
-     const userLoginFunction = async () => {
+    // User Signup State 
+    const [userLogin, setUserLogin] = useState({
+        email: "",
+        password: ""
+    });
+
+    const userLoginFunction = async () => {
         // validation 
         if (userLogin.email === "" || userLogin.password === "") {
             toast.error("All Fields are required")
         }
 
-        
         try {
             const users = await signInWithEmailAndPassword(auth, userLogin.email, userLogin.password);
-            // console.log(users.user)
 
             try {
                 const q = query(
@@ -34,35 +35,33 @@ const Login = () => {
                 const data = onSnapshot(q, (QuerySnapshot) => {
                     let user;
                     QuerySnapshot.forEach((doc) => user = doc.data());
-                    localStorage.setItem("users", JSON.stringify(user) )
+                    localStorage.setItem("users", JSON.stringify(user))
                     setUserLogin({
                         email: "",
                         password: ""
                     })
                     toast.success("Login Successfully");
-                    
-                        navigate('/student-dashboard');
-        
+
+                    navigate('/student-dashboard');
+
                 });
                 return () => data;
             } catch (error) {
                 console.log(error);
-                
             }
         } catch (error) {
             console.log(error);
-            
             toast.error("Login Failed");
         }
     }
+
     return (
         <div className='d-flex justify-content-center align-items-center min-vh-100'>
             {/* Login Form  */}
-            <div className="login_Form bg-light p-4 rounded border border-secondary shadow">
-
+            <div className="login_Form">
                 {/* Top Heading  */}
                 <div className="mb-5">
-                    <h2 className='text-center text-2xl font-weight-bold text-secondary'>
+                    <h2 className='text-center text-2xl font-weight-bold'>
                         Login
                     </h2>
                 </div>
@@ -112,8 +111,10 @@ const Login = () => {
                 </div>
 
                 <div>
-                    <h2 className='text-black'>Don't Have an account <Link className='text-secondary font-weight-bold' to={'/signup'}>Signup</Link></h2>
+                <div>
+                       <h2 className='text-black' style={{ fontSize: '15px' }}>Don't Have an account <br /> <Link className='text-secondary font-weight-bold' to={'/signup'}>Signup</Link></h2>
                 </div>
+             </div>
 
             </div>
         </div>

@@ -1,38 +1,21 @@
 /* HomePage.css */
 
-.homepage-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%; /* Adjust width as needed */
-    margin: 0 auto; /* Center the container */
+.card-container {
+    display: flex; /* Use flexbox for linear alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
   }
   
   .left-content {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+    flex: 1; /* Take up available space */
   }
   
   .right-content {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+    flex: 1; /* Take up available space */
   }
   
-  /* Adjust margin and padding as needed */
-  .left-content button {
-    margin-right: 10px;
-  }
-  
-  /* Adjust margin and padding as needed */
   .right-content img {
-    margin-left: 10px;
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
   }
   

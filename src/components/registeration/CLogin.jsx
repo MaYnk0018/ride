@@ -1,3 +1,5 @@
+// CLogin.js
+
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import myContext from "../../context/myContext";
@@ -5,7 +7,7 @@ import toast from "react-hot-toast";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
-
+import './Login.css'; // Import the CSS file
 
 const CLogin = () => {
      // navigate 
@@ -113,7 +115,7 @@ const CLogin = () => {
                 </div>
 
                 <div>
-                    <h2 className='text-black'>Don't Have an account <Link className='text-secondary font-weight-bold' to={'/signup'}>Signup</Link></h2>
+                <h2 className='text-black' style={{ fontSize: '15px' }}>Don't Have an account <br /> <Link className='text-secondary font-weight-bold' to={'/signup'}>Signup</Link></h2>
                 </div>
 
             </div>

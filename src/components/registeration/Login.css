@@ -1,0 +1,48 @@
+/* Login.css */
+
+.login_Form {
+    max-width: 400px;
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #6c757d; /* Darker border color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .login_Form h2 {
+    margin-bottom: 20px;
+    color: #343a40; /* Dark gray text */
+    font-size: 24px; /* Larger font size for headings */
+  }
+  
+  .login_Form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .login_Form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .login_Form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .login_Form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login_Form a:hover {
+    text-decoration: underline;
+  }
+  

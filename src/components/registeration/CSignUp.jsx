@@ -1,9 +1,12 @@
+// CSignup.js
+
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import './CSignUp.css'; // Import the CSS file
 
 const CSignup = () => {
 
@@ -69,18 +72,17 @@ const CSignup = () => {
     return (
         <div className='d-flex justify-content-center align-items-center min-vh-100'>
             {/* Signup Form  */}
-            <div className="signup_Form bg-light p-4 rounded border border-secondary shadow">
-
+            <div className="signup_Form">
                 {/* Top Heading  */}
                 <div className="mb-4">
-                    <h2 className='text-center text-2xl font-weight-bold text-secondary'>
+                    <h2 className='text-center text-2xl font-weight-bold'>
                         Signup
                     </h2>
                 </div>
 
                 {/* Additional Information */}
                 <div className="mb-4">
-                    <p className="text-center text-muted">
+                    <p className="text-center">
                         Please fill out the form below to create an account. 
                        
                     </p>
@@ -148,7 +150,7 @@ const CSignup = () => {
 
                 {/* Sponsor Buttons */}
                
-            <p>Already have an account? <Link to={'/clogin'} className='text-secondary font-weight-bold'>Login</Link></p>
+            <p>Already have an account? <Link to={'/clogin'} className='font-weight-bold'>Login</Link></p>
             </div>
         </div>
     );
